@@ -18,7 +18,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form class="row g-3" action="signUp" method="post" id="donarForm">
+                            <form class="row g-3" action="SignUpServlet" method="post" id="signupForm">
                                 <div class="col-md-6">
                                     <label for="fName" class="form-label fw-semibold">First Name</label>
                                     <input type="text" class="form-control" id="fName" name="fName">
@@ -62,5 +62,6 @@
                 </div>
             </div>
         </div>
+        <script  src="js/signup.js"></script>
     </body>
 </html>

@@ -17,8 +17,7 @@
                             <p class="fw-bold">Sign In</p>
                         </div>
                         <div class="card-body">
-
-                            <form class="row g-3" action="signUp" method="post" id="donarForm">
+                            <form class="row g-3" action="SignInServlet" method="post" id="signinForm">
                                 <div class="col-md-12">
                                     <label for="mobno" class="form-label fw-semibold">Mobile No. </label>
                                     <input type="tel" class="form-control" id="mobno" name="mobno">
@@ -27,8 +26,11 @@
                                     <label for="password" class="form-label fw-semibold">Password</label>
                                     <input type="password" class="form-control" id="password" name="password">
                                 </div>
+                                <div class="container text-center my-3" style="display: none" id="loader">
+                                    <span class="fa fa-refresh fa-spin fa-3x" style="color: red"></span>
+                                </div>
                                 <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg fw-semibold " id="sign-btn"> Login </button>
+                                    <button type="submit" class="btn btn-primary btn-lg fw-semibold " id="signin-btn"> Login </button>
                                 </div>
                             </form>
                         </div>
@@ -36,5 +38,6 @@
                 </div>
             </div>
         </div>
+        <script src="js/signin.js"></script>
     </body>
 </html>

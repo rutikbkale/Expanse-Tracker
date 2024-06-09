@@ -1,3 +1,6 @@
+<!--icon link-->
+<link rel="icon" href="images/online-expensive-report-7042561-5727732.webp"/>
+
 <nav class="navbar navbar-expand-lg bg-primary">
     <div class="container-fluid">
         <img src="images/online-expensive-report-7042561-5727732.webp" width="55" height="55" alt="alt"/>
