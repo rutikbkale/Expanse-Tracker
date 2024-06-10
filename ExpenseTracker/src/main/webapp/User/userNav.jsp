@@ -6,6 +6,8 @@
         <title>Expense Tracker</title>
         <!--icon link-->
         <link rel="icon" href="../images/online-expensive-report-7042561-5727732.webp"/>
+        <!--css including-->
+        <link rel="stylesheet" href="../css/style.css"/>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-primary">
@@ -24,12 +26,12 @@
                             <a class="nav-link active text-white fs-5" href="viewExpense.jsp"><i class="fa-solid fa-eye"></i> &nbsp;View Expense</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link active text-white fs-5" href="signout.jsp"><i class="fa-solid fa-right-from-bracket"></i> &nbsp;Sign out</a>
+                            <a class="nav-link active text-white fs-5" onclick="signout()" href="#"><i class="fa-solid fa-right-from-bracket"></i> &nbsp;Sign out</a>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </nav>
+        <script src="../js/logout.js"></script>
     </body>
 </html>

@@ -5,9 +5,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Expense Tracker</title>
         <%@include file="cdns.jsp" %>
+        <%@include file="navbar.jsp" %>
     </head>
     <body>
-        <%@include file="navbar.jsp" %>
         <div class="mt-4 container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">

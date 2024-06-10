@@ -1,42 +1,30 @@
 package com.expensetracker.servlet;
 
 import com.expensetracker.dao.ExpenseDao;
-import com.expensetracker.dao.UserDao;
-import com.expensetracker.entity.Expense;
-import com.expensetracker.entity.User;
 import com.expensetracker.helper.SessionFactoryProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@MultipartConfig
-public class AddExpenseServlet extends HttpServlet {
+public class DeleteExpenseServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String title = request.getParameter("title");
-            String date = request.getParameter("date");
-            String time = request.getParameter("time");
-            String reason = request.getParameter("reason");
-            String price = request.getParameter("price");
-            int id = Integer.parseInt(request.getParameter("id"));
-
-            UserDao udao = new UserDao(SessionFactoryProvider.getFactory());
-            User user = udao.getUser(id);
-            Expense expense = new Expense(title, date, time, reason, price, user);
+            int expenseId = Integer.parseInt(request.getParameter("expenseId"));
 
             ExpenseDao dao = new ExpenseDao(SessionFactoryProvider.getFactory());
-            boolean flag = dao.addExpense(expense);
+            boolean flag = dao.deleteExpense(expenseId);
             if (flag) {
-                out.println("done");
+//                out.println("done");
+                response.sendRedirect("User/viewExpense.jsp");
             } else {
-                out.println("error");
+//                out.println("error");
+                response.sendRedirect("User/viewExpense.jsp");
             }
         }
     }

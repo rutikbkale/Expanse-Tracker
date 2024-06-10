@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @MultipartConfig
-public class AddExpenseServlet extends HttpServlet {
+public class EditExpenseServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -26,13 +26,21 @@ public class AddExpenseServlet extends HttpServlet {
             String reason = request.getParameter("reason");
             String price = request.getParameter("price");
             int id = Integer.parseInt(request.getParameter("id"));
+            int expenseId = Integer.parseInt(request.getParameter("expenseId"));
 
             UserDao udao = new UserDao(SessionFactoryProvider.getFactory());
             User user = udao.getUser(id);
-            Expense expense = new Expense(title, date, time, reason, price, user);
-
             ExpenseDao dao = new ExpenseDao(SessionFactoryProvider.getFactory());
-            boolean flag = dao.addExpense(expense);
+
+            Expense expense = dao.getExpense(expenseId);
+            expense.setTitle(title);
+            expense.setDate(date);
+            expense.setTime(time);
+            expense.setReason(reason);
+            expense.setPrice(price);
+            expense.setUser(user);
+
+            boolean flag = dao.editExpense(expense);
             if (flag) {
                 out.println("done");
             } else {

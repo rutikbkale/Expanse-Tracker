@@ -12,6 +12,14 @@
         <servlet-name>AddExpenseServlet</servlet-name>
         <servlet-class>com.expensetracker.servlet.AddExpenseServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditExpenseServlet</servlet-name>
+        <servlet-class>com.expensetracker.servlet.EditExpenseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteExpenseServlet</servlet-name>
+        <servlet-class>com.expensetracker.servlet.DeleteExpenseServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
         <url-pattern>/SignUpServlet</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>AddExpenseServlet</servlet-name>
         <url-pattern>/AddExpenseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditExpenseServlet</servlet-name>
+        <url-pattern>/EditExpenseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteExpenseServlet</servlet-name>
+        <url-pattern>/DeleteExpenseServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
